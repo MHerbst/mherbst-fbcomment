@@ -1,0 +1,56 @@
+{
+   "name": "Facebook Comments",
+	"version": "0.1.14",
+	"description": "Automatically add Facebook comments to any theme.",
+	"demo": "http://koken.me",
+	"author": {
+		"name": "Martin Herbst",
+		"link": "https://www.brisoft.de"
+	},
+
+	"data": {
+		"width": {
+			"label": "Width in px",
+			"info": "Width of the comment area. Enter 0 if the width should be set to 100%",
+			"type": "string",
+			"value": "0",
+      "validation": {
+      			   "type": "regex",
+      			   "rule": "^[0-9]*$",
+      			   "error_message": "Please enter a numeric value."
+      			}
+     },
+     "posts": {
+       "label": "Posts",
+       "info": "Number of posts that should be displayed.",
+       "type": "string",
+       "value": "5",
+       "validation": {
+               "type": "regex",
+               "rule": "^[0-9]*$",
+               "error_message": "Please enter a numeric value."
+            }
+     },
+     "scheme": {
+       "header": "Color Scheme",
+       "info": "The color scheme used by the plugin",
+       "type": "select",
+       "options": [
+          {"label": "Light", "value": "light"},
+          {"label": "Dark", "value": "dark"}
+       ],
+       "value": "light"
+     },
+     "locale": {
+       "header": "Locale",
+       "info": "Language of the comment plugin, see https://developers.facebook.com/docs/plugins/comments#language",
+       "type": "string",
+       "value": "en_US",
+       "validation": {
+       			   "type": "regex",
+       			   "rule": "^[a-z][a-z]_[A-Z][A-Z]$",
+       			   "error_message": "Please enter a valid locale definition, e.g. de_DE, en_US"
+       			}
+     }
+   }
+}
