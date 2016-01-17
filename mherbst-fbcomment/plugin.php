@@ -15,16 +15,7 @@ class KokenFBComments extends KokenPlugin {
     if (!isset($locale)) {
       $locale = "en_US";
     }
-		echo <<<OUT
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/{$locale}/sdk.js#xfbml=1&version=v2.4";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-OUT;
+
     $width = $this->data->width;
 		if (!isset($width)) {
 			$width = '100%';
@@ -40,10 +31,22 @@ OUT;
     if (!isset($color)) {
         $color = "light";
     }
-    echo '<div class="fb-comments" data-href="'.$item['url'].'"'.
+    echo '<div id="fb-comment" class="fb-comments" data-href=""'.
           ' data-width="'.$width.'"'.
           ' data-colorscheme="'.$color.'"'.
           ' data-numposts="'.$posts.'"></div>';
+ 	 echo <<<OUT
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var table = document.getElementById('fb-comment');	
+table.setAttribute('data-href', window.location.href);
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/{$locale}/sdk.js#xfbml=1&version=v2.4";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+OUT;
 	}
 
 	function render_js()
