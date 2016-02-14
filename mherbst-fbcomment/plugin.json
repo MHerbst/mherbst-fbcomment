@@ -1,6 +1,6 @@
 {
    "name": "Facebook Comments",
-	"version": "0.1.15",
+	"version": "0.2.0",
 	"description": "Automatically add Facebook comments to any theme.",
 	"demo": "http://koken.me",
 	"author": {
@@ -51,6 +51,16 @@
        			   "rule": "^[a-z][a-z]_[A-Z][A-Z]$",
        			   "error_message": "Please enter a valid locale definition, e.g. de_DE, en_US"
        			}
+     },
+     "fb_admin": {
+        "header": "Facebook User ID",
+        "info": "You Facebook user id to enable comments moderation",
+        "type": "string"
+     },
+     "fb_appid": {
+        "header": "Facebook App ID",
+        "info": "You Facebook app id to enable comments moderation. Ignored if user id is set",
+        "type": "string"
      }
    }
 }
