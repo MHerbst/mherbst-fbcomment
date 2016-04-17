@@ -54,12 +54,12 @@
      },
      "fb_admin": {
         "header": "Facebook User ID",
-        "info": "You Facebook user id to enable comments moderation",
+        "info": "Your Facebook user id to enable comments moderation",
         "type": "string"
      },
      "fb_appid": {
         "header": "Facebook App ID",
-        "info": "You Facebook app id to enable comments moderation. Ignored if user id is set",
+        "info": "Your Facebook app id to enable comments moderation. Ignored if user id is set",
         "type": "string"
      }
    }
